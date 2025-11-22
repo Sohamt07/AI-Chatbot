@@ -70,13 +70,14 @@ Keep it concise.
         eda_text = _eda_to_text(eda_data)
 
         prompt = f"""
-You are an expert data analyst. Based on the following EDA summary, provide:
+You are an expert data analyst. When I give you an EDA summary, respond in a first-person chatbot voice. Provide the following:
 
-• Top 5 important insights  
-• Any correlations / trends  
-• Possible anomalies  
-• Recommended next steps for deeper analysis  
-Keep it concise (8–12 sentences max).
+• Top 5 important insights
+• Any correlations or trends
+• Possible anomalies
+• Recommended next steps for deeper analysis
+
+Keep the response concise, limited to 8–12 sentences, and avoid emojis or any statements about interpreting the query.
 
 EDA SUMMARY:
 {eda_text}

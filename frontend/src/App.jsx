@@ -23,7 +23,11 @@ function App() {
         <Divider sx={{ my: 3 }} />
 
         {/* Upload */}
-        <UploadSection setEda={setEda} setInsights={setInsights} setPlots={setPlots} />
+        <UploadSection
+          setEda={setEda}
+          setInsights={setInsights}
+          setPlots={setPlots}
+        />
 
         {eda && (
           <>
