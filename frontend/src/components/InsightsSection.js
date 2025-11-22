@@ -1,4 +1,5 @@
 import { Box, Typography, Paper } from "@mui/material";
+import { marked } from "marked";
 
 export default function InsightsSection({ eda, insights }) {
   return (
@@ -17,7 +18,7 @@ export default function InsightsSection({ eda, insights }) {
       </Typography>
 
       <Paper sx={{ p: 2, whiteSpace: "pre-line", fontSize: 16 }}>
-        {insights}
+        <span dangerouslySetInnerHTML={{ __html: marked.parse(insights) }}></span>
       </Paper>
     </Box>
   );

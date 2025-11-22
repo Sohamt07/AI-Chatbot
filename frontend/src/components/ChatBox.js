@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, TextField, Button, Paper, Typography } from "@mui/material";
 import { API } from "../api";
+import { marked } from "marked";
 
 export default function ChatBox() {
   const [query, setQuery] = useState("");
@@ -37,12 +38,13 @@ export default function ChatBox() {
                 display: "inline-block",
                 p: 1,
                 borderRadius: 2,
-                bgcolor:
-                  msg.sender === "user" ? "primary.main" : "grey.300",
+                bgcolor: msg.sender === "user" ? "primary.main" : "grey.300",
                 color: msg.sender === "user" ? "white" : "black",
               }}
             >
-              {msg.text}
+              <span
+                dangerouslySetInnerHTML={{ __html: marked.parse(msg.text) }}
+              />
             </Typography>
           </Box>
         ))}
